@@ -13,7 +13,10 @@ function Login() {
         e.preventDefault();
 
         axios
-  .post("http://localhost:3001/auth/login", { username, password })
+  .post("https://recipe-app-api-qyk2.onrender.com/auth/login", {
+  username,
+  password,
+})
   .then((result) => {
     console.log("Response:", result.data);
 
