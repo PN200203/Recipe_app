@@ -10,9 +10,10 @@ const app = express();
 app.use(cors({
     origin: [
         "http://localhost:5173",
+        "https://recipe-53x5pkfbu-learning-portal.vercel.app",
         process.env.FRONTEND_URL
-    ],
-    methods: ["GET", "POST"],
+    ].filter(Boolean),
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true
 }));
 
