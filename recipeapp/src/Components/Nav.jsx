@@ -22,12 +22,10 @@ function Nav() {
                 error.response?.data || error.message
             );
         } finally {
-            // Always clear local login state
-            localStorage.removeItem("id");
-
-            // Redirect to login
-            navigate("/auth/login", { replace: true });
-        }
+    localStorage.removeItem("id");
+    navigate("/auth/login", { replace: true });
+    window.location.reload();
+}
     };
 
     return (
