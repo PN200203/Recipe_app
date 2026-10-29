@@ -23,7 +23,7 @@ function CreateRecipe() {
     event.preventDefault();
 
     axios
-      .post("http://localhost:3001/recipe/create-recipe", recipe)
+      .post("https://recipe-app-api-qyk2.onrender.com/recipe/create-recipe", recipe)
       .then((result) => {
         navigate('/')
         console.log(result.data);
