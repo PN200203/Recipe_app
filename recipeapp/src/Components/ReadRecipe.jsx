@@ -15,7 +15,7 @@ function ReadRecipe() {
 
   const getRecipe = () => {
     axios
-      .get(`http://localhost:3001/recipe/recipe-by-id/${id}`)
+      .get(`https://recipe-app-api-qyk2.onrender.com/recipe/recipe-by-id/${id}`)
       .then((result) => {
         setRecipe(result.data);
       })
@@ -26,7 +26,7 @@ function ReadRecipe() {
     const userId = localStorage.getItem("id");
 
     axios
-      .get(`http://localhost:3001/recipe/saved-recipes/${userId}`)
+      .get(`https://recipe-app-api-qyk2.onrender.com/recipe/saved-recipes/${userId}`)
       .then((result) => {
         setSavedRecipes(result.data);
       })
@@ -38,7 +38,7 @@ function ReadRecipe() {
 
     axios
       .post(
-        `http://localhost:3001/recipe/saved-recipe/${recipe._id}`,
+        `https://recipe-app-api-qyk2.onrender.com/recipe/saved-recipe/${recipe._id}`
         {
           userId,
         }
