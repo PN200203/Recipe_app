@@ -17,32 +17,26 @@ function Nav() {
                 withCredentials: true,
             });
         } catch (error) {
-            // Continue logging out locally even if the API request fails
             console.error(
-                "Logout API request failed:",
+                "Backend logout request failed:",
                 error.response?.data || error.message
             );
         } finally {
-            // Clear the user's saved login information
+            // Always clear local login state
             localStorage.removeItem("id");
 
-            // Redirect to the login page
+            // Redirect to login
             navigate("/auth/login", { replace: true });
-
-            // Refresh the UI so the navbar updates immediately
-            window.location.reload();
         }
     };
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container">
-                {/* Logo */}
                 <Link className="navbar-brand" to="/">
                     Food Recipe
                 </Link>
 
-                {/* Toggle Button */}
                 <button
                     className="navbar-toggler"
                     type="button"
@@ -55,7 +49,6 @@ function Nav() {
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
-                {/* Navbar Links */}
                 <div
                     className="collapse navbar-collapse"
                     id="navbarTogglerDemo01"
