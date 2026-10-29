@@ -7,7 +7,7 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/recipe/recipes")
+      .get("https://recipe-app-api-qyk2.onrender.com/recipe/recipes")
       .then((response) => {
         setRecipes(response.data);
       })
