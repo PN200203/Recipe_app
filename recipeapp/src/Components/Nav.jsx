@@ -1,31 +1,21 @@
 
 import React from "react";
-import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-const API_URL = "https://recipe-app-api-qyk2.onrender.com";
 
 function Nav() {
     const navigate = useNavigate();
     const userId = localStorage.getItem("id");
 
-    const handleLogout = async () => {
-        try {
-            // Call the deployed backend logout endpoint
-            await axios.get(`${API_URL}/auth/logout`, {
-                withCredentials: true,
-            });
-        } catch (error) {
-            console.error(
-                "Backend logout request failed:",
-                error.response?.data || error.message
-            );
-        } finally {
-    localStorage.removeItem("id");
-    navigate("/auth/login", { replace: true });
-    window.location.reload();
-}
+    const handleLogout = () => {
+        // Clear the saved login ID
+        localStorage.removeItem("id");
+
+        // Redirect to the login page
+        navigate("/auth/login", { replace: true });
+
+        // Refresh the page so the navbar updates
+        window.location.href = "/auth/login";
     };
 
     return (
