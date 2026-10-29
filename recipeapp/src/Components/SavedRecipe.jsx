@@ -8,7 +8,7 @@ function SavedRecipe() {
     const userId = localStorage.getItem("id");
 
     axios
-      .get(`http://localhost:3001/recipe/saved-recipes/${userId}`)
+      .get(`https://recipe-app-api-qyk2.onrender.com/recipe/saved-recipes/${userId}`)
       .then((result) => {
         setRecipes(result.data);
       })
