@@ -7,7 +7,7 @@ const RecipeRouter = require('./Routes/reciper');
 
 const app = express();
 
-app.use(cors({
+aapp.use(cors({
     origin: [
         "http://localhost:5173",
         "https://recipe-53x5pkfbu-learning-portal.vercel.app",
