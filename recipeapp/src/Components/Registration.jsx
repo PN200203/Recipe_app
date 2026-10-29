@@ -10,7 +10,10 @@ function Registration() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:3001/auth/register', {username, password})
+        axios.post('https://recipe-app-api-qyk2.onrender.com/auth/register', {
+    username,
+    password
+})
         .then(result => {
           navigate('/auth/login')
             console.log(result)
